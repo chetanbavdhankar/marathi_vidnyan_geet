@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: light dark;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vingyan Gaani: Marathi Science Songs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: hsl(230, 85%, 60%);
+            --primary-hover: hsl(230, 85%, 55%);
+            --background: hsl(0, 0%, 98%);
+            --surface: hsl(0, 0%, 100%);
+            --text-main: hsl(220, 20%, 15%);
+            --text-muted: hsl(220, 10%, 40%);
+            --border: hsl(220, 15%, 90%);
+            --ring: hsla(230, 85%, 60%, 0.4);
+            --success: hsl(150, 55%, 45%);
+            --warning: hsl(35, 90%, 50%);
+            --danger: hsl(0, 70%, 55%);
+            font-family: 'Inter', system-ui, sans-serif;
+            font-variant-numeric: tabular-nums;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: hsl(230, 90%, 65%);
+                --primary-hover: hsl(230, 90%, 75%);
+                --background: hsl(220, 20%, 8%);
+                --surface: hsl(220, 20%, 12%);
+                --text-main: hsl(220, 10%, 90%);
+                --text-muted: hsl(220, 10%, 60%);
+                --border: hsl(220, 15%, 20%);
+                --ring: hsla(230, 90%, 65%, 0.4);
+            }
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-main);
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1.5;
+            text-wrap: pretty;
+        }
+
+        .container {
+            background: var(--surface);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 540px;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            margin: 0 0 0.5rem 0;
+            background: linear-gradient(135deg, var(--primary), hsl(280, 85%, 60%));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-wrap: balance;
+        }
+
+        p.subtitle { color: var(--text-muted); margin: 0 0 2rem 0; }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        label { font-weight: 500; font-size: 0.9rem; }
+
+        input, select {
+            padding: 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            background-color: var(--surface);
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.15s, box-shadow 0.15s;
+            outline: none;
+        }
+
+        input:focus-visible, select:focus-visible {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--ring);
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.875rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.15s ease, background-color 0.15s ease;
+            outline: none;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            touch-action: manipulation;
+        }
+
+        .btn:hover { background-color: var(--primary-hover); }
+        .btn:active { transform: scale(0.98); }
+        .btn:focus-visible { box-shadow: 0 0 0 3px var(--background), 0 0 0 6px var(--ring); }
+        .btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+        #status {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .result-box {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            background: var(--background);
+            display: none;
+            font-size: 0.95rem;
+        }
+
+        .result-panel { margin-top: 2rem; }
+
+        .result-panel h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .result-content { white-space: pre-wrap; color: var(--text-muted); line-height: 1.6; }
+
+        .result-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-secondary:hover { background-color: rgba(99, 102, 241, 0.1); }
+
+        .audio-player { width: 100%; margin: 1rem 0; }
+
+        .icon { width: 1.25em; height: 1.25em; }
+
+        .verdict {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.4rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .verdict.pass { background: var(--success); color: white; }
+        .verdict.partial { background: var(--warning); color: white; }
+        .verdict.fail { background: var(--danger); color: white; }
+
+        .question-list { list-style: none; padding: 0; margin: 0.75rem 0 0 0; }
+        .question-list li { padding: 0.4rem 0; border-bottom: 1px dashed var(--border); }
+        .question-list li:last-child { border-bottom: none; }
+        .question-list .ok { color: var(--success); }
+        .question-list .bad { color: var(--danger); }
+        .question-list .gap { color: var(--text-muted); font-size: 0.85rem; margin-left: 1.4rem; }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <h1>Vingyan Gaani</h1>
+        <p class="subtitle">Marathi Science Song Generator</p>
+
+        <form id="generatorForm">
+            <div class="form-group">
+                <label for="topic">Scientific Topic</label>
+                <input type="text" id="topic" name="topic" required placeholder="e.g. Black Holes, Photosynthesis…" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="region">Region Focus</label>
+                <input type="text" id="region" name="region" value="Maharashtra" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="genre">Song Genre</label>
+                <input type="text" id="genre" name="genre" placeholder="Powada, Lavani, Rap, Bhajan, Abhang, Koli…" autocomplete="off" list="genre-suggestions">
+                <datalist id="genre-suggestions">
+                    <option value="powada"><option value="lavani"><option value="rap">
+                    <option value="bhajan"><option value="abhang"><option value="koli">
+                </datalist>
+            </div>
+
+            <div class="form-group">
+                <label for="reference_style">Reference Style (Artist/Song)</label>
+                <input type="text" id="reference_style" name="reference_style" placeholder="e.g. Divine, Eminem, Mangeshkar..." autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="grade_level">Target Audience</label>
+                <select id="grade_level" name="grade_level">
+                    <option value="general">General audience</option>
+                    <option value="elementary">Elementary (ages 6-10)</option>
+                    <option value="middle school">Middle school (ages 11-13)</option>
+                    <option value="high school">High school (ages 14-17)</option>
+                    <option value="college">College / adult</option>
+                    <option value="18+">🔞 18+ — Raw street slang &amp; explicit</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="instruments">Preferred Instruments</label>
+                <input type="text" id="instruments" name="instruments" placeholder="e.g. Dhol, Tasha" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="additional_info">Additional Options</label>
+                <input type="text" id="additional_info" name="additional_info" placeholder="Anything else worth mentioning" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="model">Model Name</label>
+                <input type="text" id="model" name="model" value="gemini/gemini-3.1-pro-preview" list="model-suggestions" autocomplete="off" required>
+                <datalist id="model-suggestions">
+                    <option value="gemini/gemini-3.1-pro-preview">
+                    <option value="gemini/gemini-2.5-pro">
+                    <option value="gemini/gemini-2.5-flash">
+                    <option value="openai/gpt-4o">
+                    <option value="ollama/qwen2.5:7b">
+                    <option value="ollama/llama3.1:8b">
+                </datalist>
+            </div>
+
+            <button type="submit" class="btn" id="submitBtn">
+                Generate Song
+                <svg class="icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </button>
+        </form>
+
+        <div id="status" aria-live="polite"></div>
+        <div id="resultBox" class="result-box">
+            <div class="result-actions" id="downloadActions"></div>
+            <div class="result-panel" id="verifierPanel" style="display:none;">
+                <h3>--- COMPREHENSION CHECK ---</h3>
+                <div id="verifierContent"></div>
+            </div>
+            <div class="result-panel">
+                <h3>--- MARATHI LYRICS ---</h3>
+                <div id="lyricsContent" class="result-content"></div>
+            </div>
+            <div class="result-panel">
+                <h3>--- PRODUCER NOTES ---</h3>
+                <div id="notesContent" class="result-content"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const form = document.getElementById('generatorForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const statusDiv = document.getElementById('status');
+        const resultBox = document.getElementById('resultBox');
+        const lyricsContent = document.getElementById('lyricsContent');
+        const notesContent = document.getElementById('notesContent');
+        const downloadActions = document.getElementById('downloadActions');
+        const verifierPanel = document.getElementById('verifierPanel');
+        const verifierContent = document.getElementById('verifierContent');
+
+        const generateSvg = `<svg class="icon" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>`;
+
+        function renderVerifier(report) {
+            if (!report) { verifierPanel.style.display = 'none'; return; }
+            verifierPanel.style.display = 'block';
+            const verdictClass = report.verdict || 'fail';
+            const items = (report.questions || []).map(q => {
+                const mark = q.answerable ? '<span class="ok">✓</span>' : '<span class="bad">✗</span>';
+                const gap = q.answerable ? '' : `<div class="gap">gap: ${escapeHtml(q.gap || 'lyrics did not address this')}</div>`;
+                return `<li>${mark} ${escapeHtml(q.question)}${gap}</li>`;
+            }).join('');
+            verifierContent.innerHTML = `
+                <p><span class="verdict ${verdictClass}">${verdictClass}</span> &nbsp; ${escapeHtml(report.summary || '')}</p>
+                <ul class="question-list">${items}</ul>
+            `;
+        }
+
+        function escapeHtml(s) {
+            return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Connecting...';
+            statusDiv.textContent = 'Initializing stream...';
+            statusDiv.style.display = 'block';
+            resultBox.style.display = 'none';
+
+            try {
+                const response = await fetch('/api/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) throw new Error('Failed to connect to generation endpoint.');
+
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder("utf-8");
+                let resultData = null;
+                let buffer = "";
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+
+                    buffer += decoder.decode(value, { stream: true });
+                    const lines = buffer.split('\n');
+                    buffer = lines.pop();  // keep incomplete trailing line
+
+                    for (const line of lines) {
+                        if (!line.trim()) continue;
+                        const msg = JSON.parse(line);
+                        if (msg.error) throw new Error(msg.error);
+                        if (msg.status) {
+                            statusDiv.textContent = msg.status;
+                            submitBtn.innerHTML = 'Generating...';
+                        }
+                        if (msg.result) resultData = msg.result;
+                    }
+                }
+
+                if (resultData) {
+                    statusDiv.style.display = 'none';
+                    lyricsContent.textContent = resultData.lyrics;
+                    notesContent.textContent = resultData.producer_notes;
+                    renderVerifier(resultData.verifier_report);
+
+                    const safe = resultData.safe_topic;
+                    downloadActions.innerHTML = `
+                        <a href="/output/${safe}/${safe}_lyrics.txt" download class="btn btn-secondary">Lyrics (.txt)</a>
+                        <a href="/output/${safe}/${safe}_producer_notes.txt" download class="btn btn-secondary">Producer Script (.txt)</a>
+                        <a href="/output/${safe}/${safe}_mix_spec.json" download class="btn btn-secondary">Mix Spec (.json)</a>
+                        <button id="genAudioBtn" class="btn" style="background: linear-gradient(135deg, hsl(280, 85%, 60%), var(--primary)); color: white;">🎵 Generate Music (Lyria 3 Pro)</button>
+                    `;
+
+                    resultBox.style.display = 'block';
+
+                    document.getElementById('genAudioBtn').addEventListener('click', async (ev) => {
+                        const audioBtn = ev.currentTarget;
+                        audioBtn.disabled = true;
+                        audioBtn.innerHTML = 'Synthesizing with Lyria 3 Pro... ⏳';
+                        try {
+                            const resp = await fetch('/api/generate-audio', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    topic: data.topic,
+                                    genre: data.genre || '',
+                                    producer_notes: resultData.producer_notes
+                                })
+                            });
+                            const resJson = await resp.json();
+                            if (!resp.ok) throw new Error(resJson.detail || 'Audio generation failed');
+
+                            audioBtn.style.display = 'none';
+                            const panel = document.createElement('div');
+                            panel.className = 'result-panel';
+                            panel.innerHTML = `
+                                <h3>--- LYRIA 3 PRO TRACK ---</h3>
+                                <audio controls class="audio-player" src="${resJson.url}"></audio>
+                                <a href="${resJson.url}" download class="btn btn-secondary" style="width: 100%; background: rgba(16, 185, 129, 0.1); border-color: #10b981; color: #10b981;">💾 Download Final Song (.wav)</a>
+                            `;
+                            resultBox.insertBefore(panel, document.querySelector('.result-panel'));
+                        } catch (err) {
+                            alert('Error: ' + err.message);
+                            audioBtn.innerHTML = '❌ Generation Failed';
+                            audioBtn.disabled = false;
+                        }
+                    });
+                }
+            } catch (err) {
+                statusDiv.textContent = 'Error: ' + err.message;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `Generate Song ${generateSvg}`;
+            }
+        });
+    </script>
+</body>
+
+</html>
