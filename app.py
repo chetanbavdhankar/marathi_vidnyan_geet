@@ -12,6 +12,8 @@ Static layout:
 import os
 import json
 import asyncio
+import webbrowser
+from threading import Timer
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
@@ -99,4 +101,5 @@ async def root():
 
 if __name__ == "__main__":
     print("Starting FastAPI server... Visit http://localhost:8000")
+    Timer(1.5, lambda: webbrowser.open("http://localhost:8000")).start()
     uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)
