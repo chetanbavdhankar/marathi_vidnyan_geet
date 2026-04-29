@@ -23,6 +23,7 @@ Your task is to produce a full-length, production-ready song based on the provid
 6. **Structural Discipline:** Follow the song architecture (Intro → Verse → Chorus → Bridge → Outro) as specified in the recording script. Complete every section.
 7. **Instrumentation Quality:** Utilize premium, multi-layered background music. The mix should feature high-fidelity instrumentals, crisp transitions, and emotionally resonant drops.
 8. **Avoidance:** Refrain from using generic MIDI sounds, muddy synthetic textures, or robotic vocal delivery.
+9. **No Shouting:** When generating high-energy or aggressive sections (like rap), STRICTLY avoid shouting or screaming. Convey aggression and energy through rhythmic flow, delivery depth, and tone, rather than volume.
 
 # LAYER 5: THINKING SCAFFOLD
 Before rendering the audio, use <scratchpad> tags to:
