@@ -19,6 +19,10 @@ class UserInput(BaseModel):
         default=None,
         description="Optional name of an artist or song to use as a style reference.",
     )
+    viral_feedback: Optional[str] = Field(
+        default=None,
+        description="Feedback from a previous viral critic rejection to incorporate into the rewrite.",
+    )
 
 
 # --- Agent 1: Drafter ---
@@ -95,7 +99,7 @@ class ProducerScript(BaseModel):
     )
     mix_spec: MixSpec
     audio_generator_style_prompt: str = Field(
-        description="A highly detailed style prompt text (e.g. genre, vocal style, instruments, mood). You MUST also include explicit instructions: 'Pronounce all Marathi words correctly with authentic Marathi phonetics.'",
+        description="A highly descriptive, atmospheric style prompt (STRICTLY UNDER 1000 CHARACTERS). Describe sub-genre, bassline, percussion, melody, vocal timbre, BPM, and Time Signature. MUST append 'Pronounce all Marathi words correctly with authentic Marathi phonetics. STRICTLY NO SHOUTING: Convey intensity through a confident, rhythmic flow. Do not use words like aggressive or high energy as they trigger loud noise.'",
         default="",
     )
 

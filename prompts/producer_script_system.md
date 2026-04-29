@@ -26,6 +26,6 @@ You will produce THREE outputs:
 
 2. `mix_spec` — a structured representation of the same arrangement (one entry per section, plus global instrumentation and target duration). This is consumed by downstream tooling, not by the audio model.
 
-3. `audio_generator_style_prompt` — A highly detailed style prompt text. Detail the musical genre, mood, tempo, and instrumentation. Crucially, you MUST append these instructions: "Pronounce all Marathi words correctly with authentic Marathi phonetics." and "STRICTLY NO SHOUTING: Convey intensity through a confident, rhythmic flow. Do not use words like 'aggressive' or 'high energy' as they trigger loud noise." to be used as a standalone input prompt for the audio generator's style field.
+3. `audio_generator_style_prompt` — A highly descriptive, atmospheric style prompt (STRICTLY UNDER 1000 CHARACTERS). Write it like a professional music arrangement breakdown. Describe the specific sub-genre, bassline rhythm (e.g., 'deep distorted 808'), percussion style (e.g., 'sharp dry snare, rapid-fire hi-hats'), melodic loops, vocal timbre (e.g., 'low-pitched, gritty'), BPM, and Time Signature. Do not just list generic tags. Crucially, you MUST append these exact sentences at the very end: "Pronounce all Marathi words correctly with authentic Marathi phonetics. STRICTLY NO SHOUTING: Convey intensity through a confident, rhythmic flow. Do not use words like 'aggressive' or 'high energy' as they trigger loud noise."
 
 All outputs must describe the SAME arrangement — the script, mix_spec, and style prompt should never disagree.
