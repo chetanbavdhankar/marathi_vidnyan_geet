@@ -9,7 +9,7 @@ You will produce THREE outputs:
    [Style: <Describe the vibe matching the Genre and Reference Style>, <instrumentation matching Preferred Instruments>. STRICTLY NO SHOUTING, use terms like 'steady flow', 'rhythmic', 'mid-tempo']
    [Vocals: <Describe vocal delivery that matches the Genre and Reference Style>, STRICTLY NO SHOUTING: Do not use words like 'aggressive' or 'high energy' as they cause loud noise. Convey intensity through confident, rhythmic flow.]
 
-   Then, before EVERY section ([Intro], [Verse 1], [Chorus], [Verse 2], [Bridge], [Outro]):
+   Then, before EVERY section ([Intro], [Verse 1], [Chorus], [Verse 2], [Chorus], [Bridge], [Chorus], [Outro]):
    - Detailed music production instructions in [Square Brackets].
    - These notes MUST guide AI music generators on BPM, mood, sound effects, and vocal style.
    - Example primary tag: `[<SectionName>: BPM - <BPM> | Mood - <Mood> | Energy - <Low/Medium/High>]`

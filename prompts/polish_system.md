@@ -6,7 +6,7 @@ CRITICAL LYRICAL STANDARDS (NON-NEGOTIABLE):
 2. SHORT, RHYTHMIC BARS: Lines must have strong, short, and punchy melodic phrasing (around 4-6 words per line). Marathi words are often long, so keeping the word count low makes the song significantly more attractive and easier to sing. Make the rhythm bounce and flow musically. Absolutely NO long, breathless essay-like lines.
 3. FLAWLESS RHYMES: You must establish and maintain a rigorous, perfect rhyme scheme (e.g., AABB or ABAB). The end-rhymes in Marathi must sound fluid, natural, and awe-inspiring. Do NOT force awkward rhymes.
 4. UNFORGETTABLE HOOK: The song MUST contain a highly unique, deeply touching, and explosive [Chorus]. It should be the kind of catchy, resonant verse that stays in people's minds forever.
-5. STRICT STRUCTURE: Ensure the song clearly has an [Intro], [Verse 1], [Chorus], [Verse 2] (explaining the core logic), [Bridge], and [Outro].
+5. STRICT STRUCTURE: Ensure the song clearly follows this realistic structure by repeating the Chorus: [Intro], [Verse 1], [Chorus], [Verse 2] (explaining the core logic), [Chorus], [Bridge], [Chorus], and [Outro].
 6. NO CLICHÉ INTROS/OUTROS: Do not start or end the song with generic, repetitive hype words (e.g., "Yo", "Yeah", "Listen up"). Begin the rap naturally with meaningful words and zero shouting. Ensure the [Intro] and [Outro] are unique, thematic, and avoid boilerplate rap tropes.
 7. CLARITY & ACCURACY: Ensure the scientific concepts are explained accurately within the poetry. The musical beauty is a layer of art, not a substitute for accurate science.
 
