@@ -154,6 +154,7 @@ async def generate_song(user_input: UserInput, model_name: str):
         grade_level=user_input.grade_level or "general",
         reference_style=user_input.reference_style or "None",
         additional_info=user_input.additional_info or "None",
+        viral_feedback=f"\nCRITICAL REWRITE FEEDBACK FROM PREVIOUS REJECTION:\n{user_input.viral_feedback}\n" if user_input.viral_feedback else "",
     )
     if (guide := lookup_genre(user_input.genre)) is not None:
         base_user_prompt += f"\n\nGenre reference (Marathi musical tradition):\n{format_genre_guide(guide)}"
@@ -476,48 +477,57 @@ def _get_user_input() -> tuple[UserInput, str]:
 
 async def _amain():
     user_input, model_name = _get_user_input()
-    result = None
-    async for update in generate_song(user_input, model_name):
-        if "status" in update:
-            print(update["status"])
-        elif "result" in update:
-            result = update["result"]
+    while True:
+        result = None
+        async for update in generate_song(user_input, model_name):
+            if "status" in update:
+                print(update["status"])
+            elif "result" in update:
+                result = update["result"]
 
-    print("\n" + "=" * 60)
-    print(f"🎶 TITLE: {result['title']}")
-    print("=" * 60)
-    print("\n📄 --- MARATHI LYRICS ---:\n")
-    print(result["lyrics"])
-    print("\n" + "=" * 60)
-    print("\n🎛️ --- PRODUCER NOTES ---:\n")
-    print(result["producer_notes"])
-    print("=" * 60)
+        print("\n" + "=" * 60)
+        print(f"🎶 TITLE: {result['title']}")
+        print("=" * 60)
+        print("\n📄 --- MARATHI LYRICS ---:\n")
+        print(result["lyrics"])
+        print("\n" + "=" * 60)
+        print("\n🎛️ --- PRODUCER NOTES ---:\n")
+        print(result["producer_notes"])
+        print("=" * 60)
 
-    if (vr := result.get("verifier_report")) is not None:
-        print(f"\n🎓 Comprehension verdict: {vr['verdict']} — {vr['summary']}")
-        for q in vr["questions"]:
-            mark = "✓" if q["answerable"] else "✗"
-            print(f"  {mark} {q['question']}")
-            if not q["answerable"] and q.get("gap"):
-                print(f"     gap: {q['gap']}")
+        if (vr := result.get("verifier_report")) is not None:
+            print(f"\n🎓 Comprehension verdict: {vr['verdict']} — {vr['summary']}")
+            for q in vr["questions"]:
+                mark = "✓" if q["answerable"] else "✗"
+                print(f"  {mark} {q['question']}")
+                if not q["answerable"] and q.get("gap"):
+                    print(f"     gap: {q['gap']}")
 
-    if (viral := result.get("viral_report")) is not None:
-        avg = sum(viral[k]["score"] for k in ("hook_score", "replay_score", "magnetism_score", "emotion_score", "cultural_fit_score")) / 5
-        icon = "✅" if viral["verdict"] == "pass" else "❌"
-        print(f"\n🔥 Viral Potential: {icon} {viral['verdict'].upper()} (avg {avg:.1f}/10)")
-        for dim in ("hook_score", "replay_score", "magnetism_score", "emotion_score", "cultural_fit_score"):
-            label = dim.replace("_score", "").replace("_", " ").title()
-            print(f"  {viral[dim]['score']:>2}/10  {label}: {viral[dim]['justification']}")
-        if viral["verdict"] == "fail" and viral.get("improvement_notes"):
-            print(f"\n📋 Rejection summary saved. See *_viral_rejection_summary.txt in output folder.")
+        if (viral := result.get("viral_report")) is not None:
+            avg = sum(viral[k]["score"] for k in ("hook_score", "replay_score", "magnetism_score", "emotion_score", "cultural_fit_score")) / 5
+            icon = "✅" if viral["verdict"] == "pass" else "❌"
+            print(f"\n🔥 Viral Potential: {icon} {viral['verdict'].upper()} (avg {avg:.1f}/10)")
+            for dim in ("hook_score", "replay_score", "magnetism_score", "emotion_score", "cultural_fit_score"):
+                label = dim.replace("_score", "").replace("_", " ").title()
+                print(f"  {viral[dim]['score']:>2}/10  {label}: {viral[dim]['justification']}")
+            if viral["verdict"] == "fail" and viral.get("improvement_notes"):
+                print(f"\n📋 Rejection summary saved. See *_viral_rejection_summary.txt in output folder.")
+                
+                retry_choice = input("\n❌ The song was rejected by the Viral Critic. Would you like to retry generating with this feedback? (y/n): ").strip().lower()
+                if retry_choice == "y":
+                    user_input.viral_feedback = viral["improvement_notes"]
+                    print("\n🔄 Retrying generation with viral critic feedback...\n")
+                    continue
 
-    print("\n✅ Files saved to the 'output' directory.")
-    try:
-        choice = input("\nGenerate music using Lyria 3 Pro now? (y/n): ").strip().lower()
-        if choice == "y":
-            generate_audio_from_notes(result["safe_topic"], result["producer_notes"])
-    except Exception as e:
-        print(f"\n❌ Error during audio generation: {e}")
+        print("\n✅ Files saved to the 'output' directory.")
+        try:
+            choice = input("\nGenerate music using Lyria 3 Pro now? (y/n): ").strip().lower()
+            if choice == "y":
+                generate_audio_from_notes(result["safe_topic"], result["producer_notes"])
+        except Exception as e:
+            print(f"\n❌ Error during audio generation: {e}")
+            
+        break
 
 
 def main():
