@@ -7,6 +7,7 @@ Instruments: {instruments}
 Target Audience / Grade Level: {grade_level}
 Reference Style (Artist/Song): {reference_style}
 Additional Context: {additional_info}
+{viral_feedback}
 
 Remember to:
 1. Explain the science clearly, but the lyrics MUST be deeply musical, soulful, and poetic. It must have a massive "wow" factor that leaves the listener in awe.
