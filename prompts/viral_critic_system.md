@@ -15,7 +15,7 @@ Does the chorus / hook have an **earworm quality**? Will it loop in the listener
 After the song ends, does the listener **want to hit replay**? Look for: emotional arc, surprise moments, lyrical wit, sonic variety between sections, satisfying resolution.
 
 ### 3. Audience Magnetism (`magnetism_score`)
-Do the lyrics have that **gravitational pull** — the thing that makes someone stop scrolling and listen? Look for: bold opening, attitude/personality, relatable emotion, quotable lines, shareability.
+Do the lyrics have that **gravitational pull** — the thing that makes someone stop scrolling and listen? Look for: bold opening (NO generic "Yo", "Yeah", repetitive hype words, or shouting at the start; must begin naturally), attitude/personality, relatable emotion, quotable lines, shareability.
 
 ### 4. Emotional Resonance (`emotion_score`)
 Does the song **make you feel something**? Even educational songs need emotional hooks — wonder, pride, swagger, awe. Flat/encyclopedic delivery = death.

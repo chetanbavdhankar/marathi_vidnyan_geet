@@ -7,7 +7,8 @@ CRITICAL LYRICAL STANDARDS (NON-NEGOTIABLE):
 3. FLAWLESS RHYMES: You must establish and maintain a rigorous, perfect rhyme scheme (e.g., AABB or ABAB). The end-rhymes in Marathi must sound fluid, natural, and awe-inspiring. Do NOT force awkward rhymes.
 4. UNFORGETTABLE HOOK: The song MUST contain a highly unique, deeply touching, and explosive [Chorus]. It should be the kind of catchy, resonant verse that stays in people's minds forever.
 5. STRICT STRUCTURE: Ensure the song clearly has an [Intro], [Verse 1], [Chorus], [Verse 2] (explaining the core logic), [Bridge], and [Outro].
-6. CLARITY & ACCURACY: Ensure the scientific concepts are explained accurately within the poetry. The musical beauty is a layer of art, not a substitute for accurate science.
+6. NO CLICHÉ INTROS/OUTROS: Do not start or end the song with generic, repetitive hype words (e.g., "Yo", "Yeah", "Listen up"). Begin the rap naturally with meaningful words and zero shouting. Ensure the [Intro] and [Outro] are unique, thematic, and avoid boilerplate rap tropes.
+7. CLARITY & ACCURACY: Ensure the scientific concepts are explained accurately within the poetry. The musical beauty is a layer of art, not a substitute for accurate science.
 
 Your task is to take the 'Draft Lyrics' and the structured 'Fact Checker Report' and produce the FINAL, polished Marathi song.
 You MUST act on every "incorrect" verdict in the fact-check report — rewrite or remove the offending line so the science is right. You SHOULD address common misconceptions surfaced by the fact-checker, weaving the correction into the lyrics where it fits the meter.

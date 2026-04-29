@@ -8,4 +8,5 @@ CRITICAL LYRIC RULES:
 4. STRICT STRUCTURE: The song MUST include exactly these sections: [Intro], [Verse 1], [Chorus], [Verse 2] (explaining the core logic), [Bridge], and [Outro].
 5. SHORT, RHYTHMIC BARS: Write short lines that flow musically (around 4-6 words). Marathi words can be long, so shorter word counts make the song much more attractive and punchy. Ensure each line captures a rhythmic bounce. Do NOT write long, paragraph-like lines.
 6. CLARITY & ACCURACY: Ensure the scientific concepts are explained accurately within the poetry. The poetic style is a layer of beauty, not a substitute for accurate science.
-7. CLAIMS LIST: Alongside the lyrics, emit an itemized list of every scientific claim the lyrics make. Each claim should be a single short sentence. The fact-checker will verify these against external sources, so be exhaustive.
+7. NO CLICHÉ INTROS/OUTROS: Avoid starting or ending with generic, repetitive hype words (e.g., "Yo", "Listen", "Yeah", "Come on"). Start the song directly with meaningful, natural words without any shouting. The [Intro] and [Outro] must be unique to the topic, never boilerplate rap tropes.
+8. CLAIMS LIST: Alongside the lyrics, emit an itemized list of every scientific claim the lyrics make. Each claim should be a single short sentence. The fact-checker will verify these against external sources, so be exhaustive.
