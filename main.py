@@ -214,6 +214,18 @@ async def generate_song(user_input: UserInput, model_name: str):
     topic_dir = OUTPUT_ROOT / safe
     topic_dir.mkdir(parents=True, exist_ok=True)
 
+    reference_content = (
+        f"=== Input Parameters Reference ===\n\n"
+        f"- Topic: {user_input.topic}\n"
+        f"- Region: {user_input.region}\n"
+        f"- Genre: {user_input.genre or 'None'}\n"
+        f"- Instruments: {user_input.instruments or 'None'}\n"
+        f"- Grade Level: {user_input.grade_level or 'None'}\n"
+        f"- Reference Style: {user_input.reference_style or 'None'}\n"
+        f"- Additional Info: {user_input.additional_info or 'None'}\n"
+    )
+    (topic_dir / f"{safe}_reference.md").write_text(reference_content, encoding="utf-8")
+
     (topic_dir / f"{safe}_lyrics.txt").write_text(
         f"=== {polished.title} ===\n\n--- MARATHI LYRICS ---\n\n{polished.lyrics}\n",
         encoding="utf-8",
@@ -487,12 +499,6 @@ async def _amain():
 
         print("\n" + "=" * 60)
         print(f"🎶 TITLE: {result['title']}")
-        print("=" * 60)
-        print("\n📄 --- MARATHI LYRICS ---:\n")
-        print(result["lyrics"])
-        print("\n" + "=" * 60)
-        print("\n🎛️ --- PRODUCER NOTES ---:\n")
-        print(result["producer_notes"])
         print("=" * 60)
 
         if (vr := result.get("verifier_report")) is not None:

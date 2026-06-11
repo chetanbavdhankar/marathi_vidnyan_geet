@@ -22,7 +22,7 @@ You will produce THREE outputs:
    [Vocal Style: <Vocal style tailored to Genre/Reference Style>, confident rhythmic flow, STRICTLY NO SHOUTING - avoid terms like 'aggressive' or 'high energy']
    (Marathi Lyrics here...)
 
-   PHONETIC RULE — when rewriting the lyrics inside producer_notes, keep the exact same structure as the main lyrics. Do NOT translate or transliterate Devanagari to Latin script. HOWEVER, to prevent AI models from singing English words twice: if the lyrics contain a Devanagari word followed by its English spelling in brackets (e.g. "ग्रॅव्हिटी (Gravity)"), you MUST REMOVE the Devanagari version and the brackets, and write ONLY the English spelling (e.g. "Gravity") in the producer_notes. Write every word out in full — no shorthand, no abbreviations.
+   PHONETIC RULE — when rewriting the lyrics inside producer_notes, keep the exact same structure as the main lyrics. Do NOT translate or transliterate Devanagari to Latin script. HOWEVER, to prevent AI models from singing English words twice: if the lyrics contain a Devanagari word followed by its English spelling in square brackets (e.g. "ग्रॅव्हिटी [Gravity]"), you MUST REMOVE the Devanagari version and the square brackets, and write ONLY the English spelling (e.g. "Gravity") in the producer_notes. Write every word out in full — no shorthand, no abbreviations.
 
 2. `mix_spec` — a structured representation of the same arrangement (one entry per section, plus global instrumentation and target duration). This is consumed by downstream tooling, not by the audio model.
 

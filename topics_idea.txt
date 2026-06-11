@@ -1,0 +1,163 @@
+[Remove topics that are already processed and filter out below list as per relevance]
+In lyrics focus on explaining what is the scientific topic i.e., its current research level explaination in simple words and what are the current research on that topic
+
+Primordial black holes
+JWST early galaxies
+Stellar nucleosynthesis
+Reionization epoch
+Hawking radiation
+Tidal disruption events
+Magnetars
+Voyager probes
+Cepheid variables
+Galactic cannibalism
+Cosmic rays
+Neutrino astronomy
+Gamma-ray bursts
+Milky Way's central black hole Sgr A*
+Cosmic web and filaments
+Eclipsing binaries
+Brown dwarfs
+Planetary nebulae
+Tabby's Star
+Rogue planets
+Trappist-1 system
+Kepler mission legacy
+Habitable zone
+Drake equation and Fermi paradox
+Time dilation near black holes
+Frame dragging and Kerr metric
+Penrose process
+Event Horizon Telescope
+Standard candles and cosmic distance ladder
+Baryon acoustic oscillations
+Inflation alternatives like cyclic and bouncing cosmologies
+Multiverse hypotheses
+Quantum foam and Planck scale
+String theory and extra dimensions
+Big Rip, Big Crunch, Big Freeze
+Vacuum decay
+Antimatter asymmetry
+Solar flares and coronal mass ejections
+Heliopause and interstellar medium
+Lagrange points
+Roche limit and tidal forces
+Gravitational lensing
+Einstein rings and crosses
+Microlensing and exoplanet detection
+Pulsar timing arrays and nanohertz gravitational waves
+LISA and space-based GW detection
+Dark flow and large-scale anomalies
+Cold spot in CMB
+Axions and ultralight dark matter
+WIMPs and direct detection experiments
+Neutron star mergers and r-process gold
+Kilonovae
+Supernova remnants and Crab Nebula
+Cassiopeia A
+Wolf-Rayet stars
+Hypergiants and most luminous stars
+Smallest and largest known stars
+Star formation and molecular clouds
+Bok globules
+Protoplanetary disks and ALMA
+Hot Jupiters and migration
+Super-Earths and mini-Neptunes
+Ocean worlds Europa and Enceladus
+Titan's methane cycle
+Triton and retrograde moons
+Pluto and Kuiper Belt
+Planet Nine hypothesis
+Sedna and detached objects
+Comet 67P and Rosetta mission
+ʻOumuamua and Borisov
+Solar neutrino problem and its resolution
+Helioseismology
+Sunspot cycle and Maunder minimum
+Space weather and satellite risks
+James Webb vs Hubble capabilities
+Adaptive optics
+Interferometry
+Radio astronomy basics and SKA
+Square Kilometre Array
+Indian astronomy contributions ARIES, IUCAA, GMRT
+GMRT discoveries
+Aryabhata satellite and ISRO history
+Chandrayaan and lunar south pole water
+Aditya-L1 solar mission
+Indian neutrino observatory
+Marathi astronomers and Jayant Naralikar's steady state work
+Variable stars and RR Lyrae
+Open clusters Pleiades and Hyades
+Stellar streams and galactic archaeology
+Gaia mission and 3D galaxy map
+Local Group dynamics
+Andromeda-Milky Way collision details
+Dwarf galaxies and missing satellites problem
+Ultra-diffuse galaxies
+Low surface brightness galaxies
+Green Pea galaxies
+Lyman-alpha emitters
+First quasars at high redshift
+Population III stars
+21cm hydrogen line
+HI surveys and galaxy gas content
+Star formation main sequence
+Galaxy morphology and Hubble sequence
+Mergers and starburst galaxies
+AGN unification model
+Blazars and jets
+Relativistic jets physics
+Accretion disk physics
+Innermost stable circular orbit
+Spaghettification
+Holographic principle
+Black hole information paradox
+Firewall paradox
+Susskind-Hawking bet
+Black hole entropy and Bekenstein bound
+Fine-tuning of physical constants
+Dimensionless constants and alpha
+Variation of fundamental constants over time
+Equivalence principle tests
+Tests of general relativity
+Pulsar PSR B1913+16 and Nobel
+Mercury perihelion precession
+Gravitational redshift
+Shapiro delay
+Frame of reference and Mach's principle
+Olbers' paradox
+Heat death of universe
+Boltzmann brains
+Eternal inflation
+Bubble universes
+Conformal cyclic cosmology Penrose
+Loop quantum gravity
+Causal set theory
+Emergent gravity Verlinde
+MOND and TeVeS
+Modified inertia theories
+Galactic dark matter halos
+Subhalo mass function
+Tidal streams and Sagittarius dwarf
+Stellar halo of Milky Way
+Bulge versus disk populations
+Thick disk versus thin disk
+Spiral arm formation theories
+Density wave theory
+Galactic bar and resonances
+Galactic habitable zone
+Rare Earth hypothesis
+Panspermia
+Building blocks of life in space ALMA detections
+Glycine in comets
+Amino acids in meteorites
+Murchison meteorite
+Chirality of biomolecules
+SETI and Wow signal
+Breakthrough Listen
+Technosignatures versus biosignatures
+Dyson spheres and megastructures
+Kardashev scale
+Great Filter
+Zoo hypothesis
